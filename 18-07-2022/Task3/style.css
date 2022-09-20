@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    color: rgb(1, 11, 14);
+}
+
+#main{
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightskyblue;
+    border-radius: 1pc;
+}
+
+.inpUnit{
+    width: 65px;;
+}
+
+th{
+    width: 200px;
+}
+
+td{
+    text-align: center;
+}
