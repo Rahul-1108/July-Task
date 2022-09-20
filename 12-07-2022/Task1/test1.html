@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="./script/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+    </a>
+  </nav>
+  <!-- menu buttons -->
+  <div class="container mt-3 m-auto">
+		<div class="row">
+			<ul id="filterOptions" class="list-unstyled d-xl-inline-flex">
+				<li class="active"><a href="#" class="all">ALL</a></li>
+				<li><a href="#" class="Clothes">Clothes</a></li>
+				<li><a href="#" class="Mobile">Mobile</a></li>
+				<li><a href="#" class="laptop">laptop</a></li>
+			</ul>
+		</div><br>
+	</div>
+
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <button type="button" class="menubtn" id="ltohsort" style="color:white;"><i class="bi bi-chevron-double-down"> </i>Price</button>
+    <button type="button" class="menubtn" id="htolsort" style="color:white;"><i class="bi bi-chevron-double-up"> </i>Price</button>
+  </div>
+  <!-- menu shorting buttons -->
+  <form class="form-inline justify-content-center mt-4" method="post">
+    <div class="form-group"><input class="form-control" id="search-input" type="text" name="search"  placeholder="search Now"></div>
+    <div class="form-group"><span class="btn" id="search"><i class="bi bi-search"></i></span></div>
+  </form>
+
+  <!-- cars grid this for javascript 
+  <div class="container-fluid">
+    <div class="px-lg-5">
+      <div class="row mt-4" id="row">
+      </div>
+    </div>
+  </div>-->
+
+  <!-- cars grid this for jquery--> 
+  <div class="container-fluid">
+    <div class="px-lg-5">
+      <div class="row mt-4" id="product">
+      </div>
+    </div>
+  </div>
+  <div id="product"></div>
+ 
+</body>
+<script src="js/index.js"></script>
+
+</html>
