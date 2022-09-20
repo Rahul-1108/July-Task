@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="js/jquery.js"></script>
+
+    </head>
+    <body>
+        <div class="container main">
+            <div class="row">
+                <div class="col-sm-12 text-center ">
+                    <br><h1>Simple Calculator</h1><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <form name="calculator" >
+                        <input type="text" class="w-100" name="display" id="display" placeholder="Enter Number">
+                        <span name="error" id="error"></span>
+                        
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <form name="calculator">
+                        <input type="button" id="equal" class="btn btn-primary w-100 " value="="><br><br>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <form name="calculator">
+
+                        <input type="button" class="btn calc btn-primary w-100" value="7"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="4"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="1"><br><br>
+                        <input type="button" class="btn  btn-primary w-100" value="Clear" id="clear"><br><br>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <form action="#" name="calculator">
+
+                        <input type="button" class="btn calc btn-primary w-100" value="8"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="5"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="2"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="."><br><br>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <form name="calculator">
+                    
+                        <input type="button" class="btn calc btn-primary w-100" value="9"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="6"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="3"><br><br>
+                       
+                        <input type="button" class="btn calc btn-primary w-100" value="0"><br><br>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <form name="calculator">
+                       
+                        <input type="button" class="btn calc btn-primary w-100" value="/"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="*"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="-"><br><br>
+                        <input type="button" class="btn calc btn-primary w-100" value="+"><br><br>
+                    </form>
+                </div>
+
+            </div>
+
+ 
+        </div>
+            <script src="js/custom.js"></script>
+
+
+            <script>
+                $(document).ready(function(){
+                    $('.calc').click(function(){
+                        $('#display').val(($('#display').val() + $(this).val()));
+                    });
+                
+                    $('#clear').click(function(){
+                        $('#display').val("");
+                    })
+                
+                    $('#equal').click(function(){
+                        $('#display').val(eval($('#display').val()));
+                    })
+                });
+                </script>
+
+    </body>
+
+</html>

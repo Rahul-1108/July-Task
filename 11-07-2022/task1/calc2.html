@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./script/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $(".clc").click(function(){
+                $("#display").val($("#display").val() +$(this).val());
+              });
+              $(".clear").click(function(){
+                $("#display").val('');
+              }); 
+              $(".result").click(function(){
+                $("#display").val(eval($("#display").val()));
+              });
+            });
+        </script>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    
+    .main{
+        margin-left: 470px;
+        background-color: #9a9aa3;
+        width: 30%;
+
+    
+    }
+     #display{
+        width: 93%;
+        padding: 5px;
+        font-size: 55px;
+        color: rgb(242, 240, 240);
+        background-color: rgb(3, 0, 0);
+        text-align: right;
+        border: 1px solid rgb(234, 226, 226);
+        outline: none;
+    }
+    .clear{
+        background-color: red;
+        color: #fff;
+    }
+     input{
+        background-color: #333;
+        color: #fff;
+        margin-top: 5px;
+        font-size: 25px;
+        width: 95px;
+        height: 95px;
+        border-radius: 40px;
+        border-width: 0;
+    } 
+    .finalresult{
+        background-color: #001010;
+    }
+    h1{
+        
+    }
+</style>
+    </head>
+    <body>
+        <h1>Simple Calculator in jQuery</h1><br><br>
+        <div class="main">
+    <!--form tags-->
+        <input id="display" type="text" placeholder=""><br>
+    
+        <input class="clc" type="button" value="7">
+        <input class="clc" type="button" value="8">
+        <input class="clc" type="button" value="9">
+        <input class="clc" type="button" value="*">
+        <br>
+        <input class="clc" type="button" value="4">
+        <input class="clc" type="button" value="5">
+        <input class="clc" type="button" value="6">
+        <input class="clc" type="button" value="/">
+        <br>
+        <input class="clc" type="button" value="1">
+        <input class="clc" type="button" value="2">
+        <input class="clc" type="button" value="3">
+        <input class="clc" type="button" value="-">
+        <br>
+        <input class="clear" type="button" value="C">
+        <input class="clc" type="button" value="0">
+        <input class="clc" type="button" value="+">
+        <input class="result" type="button" value="=">
+    </div>
+    </body>
+</html>

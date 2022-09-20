@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: cadetblue;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    
+}
+.calc-container{
+    width: 400px;
+    padding: 10px;
+    background:rgba(255,255,255,0,2);
+}
+.calc-container table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+}
