@@ -1,0 +1,116 @@
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            padding: 25px;
+            color: rgb(71, 188, 25);
+            width: 480px;
+        }
+        #clear {
+            width: 440px;
+            border: 3px solid brown;
+            border-radius: 3px;
+            padding: 20px;
+            color: white;
+            background-color: rgb(77, 22, 113);
+        }
+        .formstyle {
+            width: 520px;
+            height: 680px;
+            margin: auto;
+            border: 3px solid rgb(47, 181, 82);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            background-color:rgb(173, 189, 164);
+        }
+        input {
+            width: 100px;
+            background-color: lightyellow;
+            color: black;
+            border: 3px solid brown;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 5px;
+            font-size: 15px;
+        }
+        #Calculator {
+            width: 161px;
+            border-radius: 5px;
+            padding: 20 px;
+            margin: auto;
+            text-align: center;
+        }
+        #Calc {
+            width: 440px;
+            border-radius: 5px;
+            text-align: right;
+        }  
+        #sign
+        {
+              text-align: center;
+        }      
+    </style>
+    <script>
+        function putvalue(value) {
+            if(document.getElementById("Sign").value == "")
+            {
+                form1.input1.value += value;
+                form1.answer.value += value;
+            }
+            else 
+            {
+                form1.input2.value += value;
+                form1.answer.value += value;
+            }
+        }
+        function getSign(s){
+        if(form1.input1.value !='')
+        {
+            var operator =document.getElementById("Sign").value= s;
+            form1.answer.value += s; 
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="formstyle">
+        <h1> Simple Calculator 2</h1>
+        <form name="form1">
+            <input id="Calculator" type="text" placeholder="Enter Number" name="input1">
+            <input id="Sign" type="text" name="sign" placeholder="Sign">
+            <input id="Calculator" type="text" placeholder="Enter Number" name="input2">
+          
+
+            <input type="button" value="1" onclick="putvalue('1');">
+            <input type="button" value="2" onclick="putvalue('2'); ">
+            <input type="button" value="3" onclick="putvalue('3');">
+            <input type="button" style="background-color:rgb(147, 229, 235);" value="+" onclick="getSign('+')">
+            <br> <br>
+
+            <input type="button" value="4" onclick="putvalue('4'); ">
+            <input type="button" value="5" onclick="putvalue('5'); ">
+            <input type="button" value="6" onclick="putvalue('6'); ">
+            <input type="button" style="background-color:rgb(147, 235, 238);" value="-" onclick="getSign('-')">
+            <br> <br>
+
+            <input type="button" value="7" onclick="putvalue('7'); ">
+            <input type="button" value="8" onclick="putvalue('8'); ">
+            <input type="button" value="9" onclick="putvalue('9'); ">
+            <input type="button" style="background-color:rgb(141, 227, 233);" value="*" onclick="getSign('*')">
+            <br> <br>
+
+            <input type="button" value="/" onclick="getSign('/') ">
+            <input type="button" value="0" onclick="putvalue('0');">
+            <input type="button" value="." onclick="putvalue('.');">
+            <input type="button" style="background-color:tomato;" value="=" onclick="form1.answer.value = eval(form1.answer.value) ">
+            <br>
+             
+            <input id="Calc" type="text" name="answer" placeholder="Answer"></br>
+            <input type="button" value="Clear" onclick="form1.input1.value =''; form1.input2.value=''; form1.answer.value=''; document.getElementById('Sign').value = ''; " id="clear">
+            <br>
+        </form>
+    </div>
+</body>
+</html>

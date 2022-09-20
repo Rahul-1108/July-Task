@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do Work List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style> 
+        .delete{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        .list-group-items{
+            position: relative;
+        }
+        .btnremove{
+            margin-right: -50px;
+        }
+       
+        </style>
+    </head>
+    <body >
+        <header class="bg-dark text-white p-4">
+           <div class="container">
+               <div class="row ">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <h1 class="text-center">To Do Work List</h1>
+                   </div>
+               </div>
+           </div> 
+        </header>
+        <div class="container bg-light">
+            <h3 class="mt-3 text">Add Works</h3>
+            <label id="dlsuccess" class="text-success" style="display:none"></label>
+            <form id="additems">
+                <div class="row">
+                    <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8">
+                        <input type="text" onkeyup = "togglebutton(this,'submit')" class="form-control" id="inputitem">
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" id="item">
+                        <input type="submit" class="btn btn-success" id="submit" value="+" disabled>
+                    </div>
+
+                </div>
+            </form>
+
+            <h3 class="mt-4">ItemList</h3>
+            <form class= "form-group">
+                <ul class="list-group col-lg-8 col-sm-8 col-md-8 col-xs-8" id="listitems"></ul>
+            </form>
+        </div>
+        <script src="js/myscript.js"></script>
+    </body>
+</html>
