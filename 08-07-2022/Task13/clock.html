@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title> Digital clock</Title>
+    </head>
+    <style>
+
+    *{
+        font-family: fantasy;
+        font-size: 50px;
+        font-weight: 100;
+        color: rgb(0, 11, 7);
+    }
+    .clock{
+        width: 100%;
+        padding: right 5px; 
+        overflow: hidden;
+        letter-spacing: 2px;
+    }
+
+    .year{
+        clear: both;
+        padding: 0 13px;
+        font-size: 40%;
+        float: none;
+        text-align: center;
+
+    }
+
+    .goodmorning{
+        height: 100%;
+        text-align: center;
+        background-color: aquamarine;
+
+    }
+
+    .goodafternoon{
+        height: 100%;
+        text-align: center;
+        background-color: cornflowerblue;
+    }
+
+    .goodevening{
+        height: 100%;
+        text-align: center;
+        background-color: teal;
+
+    }
+
+    .goodnight{
+        height: 100%;
+        text-align: center;
+        background-color: lightslategray;
+
+    }
+
+
+
+  
+    </style>
+
+    <body>
+        <div style='padding: 30px; border-bottom: solid 1px rgb(221, 221, 221); background-color: aqua;'>
+
+            <div class="clock" id="cl_ock" style="text-align: center;"></div>
+                <div id="Hour" style="text-align: center ;"></div>
+                <div class="year" id="day_year"></div>
+        </div>
+
+        <div class="goodmorning" style="display: none;" id="good_morning">
+        <img src="https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg">
+        <h1> GOOD MORNING</h1>
+        </div>
+    
+
+
+        <div class="goodafternoon" style="display: none;" id="good_afternoon">
+            <img src="https://cdn.pixabay.com/photo/2020/05/26/10/41/sunset-5222626_960_720.jpg">
+            <h1> GOOD AFTERNOON</h1>
+            </div>
+    
+            
+
+        <div class="goodevening" style="display: none;" id="good_evening">
+            <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg">
+            <h1> GOOD EVENING</h1>
+            </div>
+    
+            
+
+        <div class="goodnight" style="display: none;" id="good_night">
+            <img src="https://cdn.pixabay.com/photo/2013/03/02/02/41/alley-89197_960_720.jpg">
+            <h1> GOOD NIGHT</h1>
+            </div>
+        
+    </body>
+
+
+    <script>
+       setInterval(function () {
+        let dt = new Date();
+        let hrs = dt.getHours();
+        let min = dt.getMinutes();
+        let sec = dt.getSeconds();
+
+        min = startTicking(min);
+        sec = startTicking(sec);
+
+        document.getElementById('cl_ock').innerHTML = hrs + ':' + min + ':' + sec;
+
+        let d = dt.toDateString().slice(8, 10);
+        let d_styled = '<span style="color: green; font-size: 100%; float: none;">' + d + '</span> '
+
+        document.getElementById('day_year').innerHTML =
+            dt.toDateString().replace(d, d_styled);
+
+        if(hrs >= 7 && hrs < 12)
+        {
+            document.getElementById('good_morning').style = 'display:block';
+            document.getElementById('good_afternoon').style = 'display:none';
+            document.getElementById('good_evening').style = 'display:none';
+            document.getElementById('good_night').style = 'display:none';
+        }
+        else if(min >= 12 && hrs < 16) 
+        {
+            document.getElementById('good_afternoon').style = 'display:block';
+            document.getElementById('good_morning').style = 'display:none';
+            document.getElementById('good_evening').style = 'display:none';
+            document.getElementById('good_night').style = 'display:none';
+        }
+        else if(hrs >= 16 && hrs < 20)
+        {
+            document.getElementById('good_evening').style = 'display:block';
+            document.getElementById('good_morning').style = 'display:none';
+            document.getElementById('good_afternoon').style = 'display:none';
+            document.getElementById('good_night').style = 'display:none';
+        }
+        else
+        {
+            document.getElementById('good_night').style = 'display:block';
+            document.getElementById('good_morning').style = 'display:none';
+            document.getElementById('good_afternoon').style = 'display:none';
+            document.getElementById('good_night').style = 'display:none';
+        }
+        if (hrs >= 12) {
+            document.getElementById('Hour').innerHTML = 'PM';
+        }
+        else {
+            document.getElementById('Hour').innerHTML = 'AM';
+        }
+    });
+
+    let startTicking = (val) => {
+        if (val < 10) {
+            val = '0' + val;
+        }
+        return val;
+    }
+
+
+</script>
+    
+</html>
