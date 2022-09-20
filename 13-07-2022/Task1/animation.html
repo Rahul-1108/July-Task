@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./script/jquery.min.js"></script>
+        </head>
+        <style>
+            #container {
+              width: 400px;
+              height: 400px;
+              position: absolute;
+              background: rgb(128, 169, 221);
+            }
+            #animate {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              background-color: rgb(60, 21, 214);
+            }
+            </style>
+            <body>
+            
+            <p><button onclick="myMove()">Click Me</button></p> 
+            
+            <div id ="container">
+                <div id="animate" style="top: px;left: 164px;"></div>
+            </div>
+           
+            
+            <script>
+            function myMove() {
+              let id = null;
+              const elem = document.getElementById("animate");   
+              let pos = 5;
+              clearInterval(id);
+              id = setInterval(frame, 10);
+              function frame() {
+                if (pos == 350) {
+                  clearInterval(id);
+                } else {
+                  pos++; 
+                  elem.style.top = pos + "px"; 
+                  elem.style.left = pos + "px"; 
+                }
+              }
+            }
+            </script>
+
+
+    </body>
+</html>
