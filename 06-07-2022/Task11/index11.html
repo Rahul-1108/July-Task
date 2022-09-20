@@ -1,0 +1,285 @@
+
+    <!DOCTYPE html>    
+    <html>    
+    <head>    
+        <title>Reg Form</title>  
+        
+        <style type="text/css">  
+            body{  
+                font-family: Calibri;  
+            }  
+            input[type="text"] {  
+                width: 250px;  
+            }  
+            input[type="submit"], input[type="reset"] {  
+                width: 77px;  
+                height: 27px;  
+                position: relative;left: 180px;  
+            }  
+            form{  
+                background-color: rgb(50, 161, 54);
+                text-align: center;  
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 20px;  
+                border: 3px solid black;  
+                width: 600px;  
+                margin: 20px auto;  
+            }  
+            td {  
+                padding: 10px;  
+            }  
+            td:first-child {  
+                text-align: right;  
+                font-weight: bold;  
+            }  
+            td:last-child {  
+                text-align: left;  
+            }
+          
+        </style> 
+    </head>    
+    <body>  
+        <hr>    
+        <form method="" action="" name="reg_form" onsubmit="return validate()">    
+            <h2>Application Form</h2>    
+            <table>    
+                <tr>    
+                    <td><label>First Name: </label></td>    
+                    <td>    
+                        <input type="text" name="fname" id="fname"  onchange="valid_fname()" placeholder="First Name">    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td><label>Last Name: </label></td>    
+                    <td>    
+                        <input type="text" name="lname" id="lName" onchange="valid_lname()" placeholder="Last Name">    
+                    </td>    
+                </tr>  
+                
+                <tr>    
+                    <td><label>User Name: </label></td>    
+                    <td>    
+                        <input type="text" name="uname" id="userName" onchange="valid_username()" placeholder="User Name"> 
+                   
+                    </td>    
+                </tr>  
+                <tr>    
+                    <td><label>Email Id: </label></td>    
+                    <td>    
+                        <input type="email" name="email" id="email" onchange="valid_email()" placeholder="example@gmail.com">    
+                    </td>    
+                </tr>  
+                <tr>    
+                    <td><label>Password: </label></td>    
+                    <td>    
+                        <input type="password" id="pass1" onchange="valid_pass1()" name="password">    
+                    </td>    
+                </tr>  
+                <tr>    
+                    <td><label>Confirm Password: </label></td>    
+                    <td>    
+                        <input type="password" id="pass2" onchange="valid_pass2()" name="ConfirmPassword">    
+                    </td>    
+                </tr>   
+                <tr>    
+                    <td><label>Mobile: </label></td>    
+                    <td>    
+                        <input type="number" name="mobile" id="mobNo" onchange="valid_no()" placeholder="Enter Your Mobile No">    
+                    </td>    
+                </tr>  
+                <tr>    
+                    <td><label for="Country" class="form-label">Country</label></td>    
+                        <td>  
+                            <select class="form-select" aria-label="Default select example" id="country" onchange="valid_country()">
+                                <option value="select Country">Select Country</option>    
+                                <option value="India">India</option>    
+                                <option value="US">US</option>    
+                                <option value="Japan">Japan</option>    
+                                <option value="South Africa">South Africa</option>
+                                <p id="fn7" class="form-label"></p>       
+                            </select> 
+                           
+                        </td>    
+                    </tr>   
+                <tr>    
+                    <td><label>Gender: </label></td>    
+                    <td>    
+                        <input type="radio" name="gender" value="male">Male    
+                        <input type="radio" name="gender" value="femele">Female    
+                    </td>    
+                </tr>    
+            <tr>
+                <td><label>Hobbies:</label></td>
+                <td>
+                    <input type="checkbox" name="box" onclick="return check_checkbox()" value="Playing Cricket">Playing Cricket<br>
+                    <input type="checkbox" name="box" onclick="return check_checkbox()" value="Playing Cricket">Listening To Music<br>
+                    <input type="checkbox" name="box" onclick="return check_checkbox()" value="Playing Cricket">Reading Book
+                    <p id="fn8" class="form-label"></p>   
+                </td>
+            </tr>
+              
+                <tr>    
+                    <td>    
+                        <input type="submit" name="submit" value="Submit">    
+    
+                    </td>    
+                </tr>             
+            </table>    
+        </form>    
+    </body> 
+
+
+    <script>
+
+        function valid_fname(){
+            let x = document.getElementById("fname").value;
+            const re = /^[A-Za-z\s]+$/;
+
+            if (re.test(x)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+
+        function valid_lname(){
+            let y = document.getElementById("lName").value;
+            const re = /^[A-Za-z\s]+$/;
+
+            if (re.test(y)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+        function valid_username(){
+            let z = document.getElementById("userName").value;
+            const re = /^[a-zA-Z\-]+$/;
+
+            if (re.test(z)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+        function valid_email(){
+            let a = document.getElementById("email").value;
+            const re =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if (re.test(a)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+        function valid_pass1(){
+            let b = document.getElementById("pass1").value;
+            const re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+            // var minNumberofChars = 6;
+            // var maxNumberofChars = 16;
+            // alert(b);
+            // if(b.length < minNumberofChars || b.length > maxNumberofChars){
+            //     return false;
+            // }
+            // if(!regularExpression.test(b)) {
+            //     alert("password should contain atleast one number and one special character");
+            //     return false;
+            // }
+
+            if (re.test(b)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+        function valid_pass2(){
+            let p = document.getElementById("pass1").value;
+            let q = document.getElementById("pass2").value;
+
+            if (p == q){
+                alert("Match Success")
+            }
+            else{
+                alert("Password Not Matched")
+            }
+        }
+
+        function valid_no(){
+            let c = document.getElementById("mobNo").value;
+            const re = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+
+            if (re.test(c)){
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is Not valid";
+                alert("Valid");
+            }
+            else{
+                // document.getElementsByClassName("fname_error").createElement("p").innerText = "This is valid";
+                alert("Not Valid");
+            }
+        }
+
+
+        function valid_country(){
+            let m = document.getElementById("country").value;
+
+            if (m == "Open this select menu"){
+                document.getElementById("fn7").innerHTML="Please Select Option form Select Menu";
+                document.getElementById("fn7").style.color = "red";
+            }
+            else{
+                document.getElementById("fn7").innerHTML="Valid";
+                document.getElementById("fn7").style.color = "green";
+            }
+        }
+
+
+    
+       function check_checkbox(){
+            var f =  document.getElementsByName('box');
+            var newvar = 0;
+            var count;
+            
+            for(count=1; count<f.length; count++){
+                if(f[count].checked == true){
+                    newvar = newvar + 1;
+                }
+
+                if (newvar >= 1){
+                    document.getElementById("fn8").innerHTML="Valid";
+                    document.getElementById("fn8").style.color = "green";
+                }
+                else{
+                    document.getElementById("fn8").innerHTML="Please Select More then One Hobbies.";
+                    document.getElementById("fn8").style.color = "red";
+                }
+            }
+        }
+
+
+    </script>
+    
+
+   
+    </html>     
+

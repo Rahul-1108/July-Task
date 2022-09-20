@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  </head>
+  <body>
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>   
+
+    </head> 
+    <body>
+        <div class="container">
+            <h1 class="text-center">Application Form</h1>
+            <div class="col-sm-8 col-lg-8 col-xs-8 col-md-8 m-auto d-block">
+                <form action="" name="myform" onsubmit="return validation()" class="bg-light" method="post" >
+                    <div class="form-group mt-4">
+                        <label> First Name :</label>
+                        <input type="text" name="fname" class="form-control" id="fname" autocomplete="off" oninput="firstname()">
+                        <span id="fnameerror" name="fnameerror" class="text-danger" ></span><br>
+                    </div>   
+                    <div class="form-group">
+                        <label> Last Name :</label>
+                        <input type="text" name="lname" class="form-control" id="lname" autocomplete="off" oninput="lastname()">
+                        <span id="lnameerror" name="lnameerror" class="text-danger"></span><br>
+
+                    </div>  
+                    <div class="form-group">
+                        <label> User Name :</label>
+                        <input type="text" name="username" class="form-control" id="username" autocomplete="off" oninput="usernameFunc()">
+                        <span id="usererror" name="usererror" class="text-danger"></span><br>
+
+                    </div>  
+                    <div class="form-group">
+                        <label>Email Address :</label>
+                        <input type="email" name="email" class="form-control" id="email" autocomplete="off" oninput="emailFunc()">
+                        <span id="emailerror" name="emailerror" class="text-danger"></span><br>
+
+                    </div>  
+                    <div class="form-group">
+                        <label>Password :</label>
+                        <input type="password" name="password" class="form-control" id="password" autocomplete="off" oninput="passFunc()">
+                        <span id="passerror" name="passerror" class="text-danger"></span><br>
+
+                    </div> 
+                    <div class="form-group">
+                        <label>Confirm Password :</label>
+                        <input type="password" name="conpassword" class="form-control" autocomplete="off" id="conpassword" oninput="cpassFunc()">
+                        <span id="cpasserror" name="cpasserror" class="text-danger"></span><br>
+                        
+                    </div>   
+                    <div class="form-group">
+                        <label>Mobile Number :</label>
+                        <input type="text" name="number" class="form-control" autocomplete="off" id="number" oninput="numFunc()">
+                        <span id="numerror" name="numerror" class="text-danger"></span><br>
+
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                                <select id="country" name="country" onchange = "countryFunc()">
+                                    <option value="select country">Select Country</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="India">India</option>
+                                    <option value="England">England</option>
+                                    <option value="America">America</option>
+                                </select><br><br>
+                                <span id="conerror" name="conerror" class="text-danger"></span>
+                        
+                    </div> 
+                    <div class="form-group">
+                        <p>Gender:</p>
+                        <input type="radio" id="Male" name="Gender" value="Male">
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Female" name="Gender" value="Female">
+                        <label for="Female">Female</label><br><br>
+                        <span id="generror" name="generror" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <p>Hobbies</p>
+                        <input type="checkbox" id="hobby" name="hobbies" checked>
+                        <label for="sport" >Sport</label>
+                        <input type="checkbox" id="hobby" name="hobbies" >
+                        <label for="movies" >Movies</label>
+                        <input type="checkbox" id="hobby" name="hobbies" >
+                        <label for="music" >Music</label><br><br>
+                        <span id="hoberror" name="hoberror" class="text-danger"></span>
+
+                        
+                    </div>
+                   
+                    <div class="form-group">
+                        <input type=submit id="submit" class="btn btn-primary" value="Submit">
+
+                    </div>
+                
+
+            
+                </form>
+            </div>
+        </div>
+        <script src="js/validate.js"></script>
+    </body>
+
+    <script>
+//  submit btn vallidation check
+
+function validation(){
+    
+
+
+    var fname = document.forms['myform']['fname'].value;
+    var fnamecheck = /^[A-Za-z]{2,30}$/;
+
+    var lname = document.getElementById('lname').value;
+    var lnamecheck = /^[A-Za-z]{2,30}$/;
+
+    var username = document.getElementById('username').value;
+    var unamecheck = /^[A-Za-z._0-9]{2,10}$/;
+    
+    var email = document.getElementById('email').value;
+    var emailcheck = /^[A-Za-z0-9]{1,}@[A-Za-z]{2,}[.]{1}[A-Za-z.]{2,8}$/;
+    
+    
+    var password = document.getElementById('password').value;
+    var passcheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{8,16}$/;
+    
+    var conpassword = document.getElementById('conpassword').value;
+     
+    var number = document.getElementById('number').value;
+    var numcheck = /^[0-9]{10}$/;
+    
+    var country = document.getElementById('country').value;
+    var check;
+
+    if(fnamecheck.test(fname)){
+        document.getElementById('fnameerror').innerHTML = " ";
+    }else{
+        document.getElementById('fnameerror').innerHTML = " ** fill Firstname  ";
+        check = false;
+        return false;
+        
+    }
+
+    if(lnamecheck.test(lname)){
+        document.getElementById('lnameerror').innerHTML = " ";
+    }else{
+        document.getElementById('lnameerror').innerHTML = " ** Please fill Last Name";
+        check = false;
+        return false;
+    }
+
+    if(unamecheck.test(username)){
+        document.getElementById('usererror').innerHTML = " ";
+    }else{
+        document.getElementById('usererror').innerHTML = " ** Fill Username - Username must only contain . _ character and digit's";
+        check = false;
+        return false;
+    }
+
+    if(emailcheck.test(email)){
+        document.getElementById('emailerror').innerHTML = " ";
+    }else{
+        document.getElementById('emailerror').innerHTML = " ** Fill Email id - Email like this abc12@abc.com right format";
+        check = false;
+        return false;
+    }
+
+    if(passcheck.test(password)){
+        document.getElementById('passerror').innerHTML = " ";
+    }else{
+        document.getElementById('passerror').innerHTML = " **  Fill Your Password - password must contain one uppercase,one lowercase, one digit,one specialcharcter and 8 character's long";
+        check = false;
+        return false;
+    }
+
+    if(conpassword.match(password)){
+        document.getElementById('cpasserror').innerHTML = " ";
+    }else{
+        document.getElementById('cpasserror').innerHTML = " ** Fill your Confirm password - confirmpassword doesn't match password";
+        check = false;
+        return false;
+    }
+
+    if(numcheck.test(number)){
+        document.getElementById('numerror').innerHTML = " ";
+    }else{
+        document.getElementById('numerror').innerHTML = " ** Fill your number-number must contain 10 digits";
+        check = false;
+        return false;
+    }
+
+    if(country != "select country"){
+        document.getElementById('conerror').innerHTML = " ";
+    }else{
+        document.getElementById('conerror').innerHTML = " ** Please select country";
+        check = false;
+        return false;
+
+    }
+    var valid = false;
+    var x = document.myform.Gender;
+
+    for(var i=0;i<x.length;i++){
+        if(x[i].checked){
+            valid=true;
+            break;
+        }
+    }
+    if(valid){
+        document.getElementById('generror').innerHTML = " ";
+    }else{
+        document.getElementById('generror').innerHTML = " ** Please select gender";
+        check = false;
+        return false;
+    }
+
+    var check =0;
+    var y = document.myform.hobbies;
+
+    for(var i=0;i<y.length;i++){
+        if(y[i].checked){
+            check+=1;
+        }
+    }
+    if(check<=2){
+        document.getElementById('hoberror').innerHTML = " ";
+    }
+    else{
+        document.getElementById('hoberror').innerHTML = " **Please select only 2 or less hobbies ";
+        check = false;
+        return false;
+    }
+    
+    if(check == false){
+        alert("error");
+        return false;
+    }else{
+        setTimeout(function() {window.location = "wel.html" });
+    }
+
+}
+
+// check all function
+
+function firstname(){
+    var fname = document.forms['myform']['fname'].value;
+    var fnamecheck = /^[A-Za-z]{2,30}$/
+    if(fnamecheck.test(fname)){
+        document.getElementById('fnameerror').innerHTML = " ";
+    }else{
+        document.getElementById('fnameerror').innerHTML = " ** Firstname is invalid Plaease write only characters";
+        return false;
+    }
+}
+
+function lastname(){
+    var lname = document.getElementById('lname').value;
+    var lnamecheck = /^[A-Za-z]{2,30}$/;
+    if(lnamecheck.test(lname)){
+        document.getElementById('lnameerror').innerHTML = " ";
+    }else{
+        document.getElementById('lnameerror').innerHTML = " ** Lastname is invalid use characters only";
+        return false;
+    }
+}
+
+function usernameFunc(){
+    var username = document.getElementById('username').value;
+    var unamecheck = /^[A-Za-z._0-9]{2,10}$/;
+    if(unamecheck.test(username)){
+        document.getElementById('usererror').innerHTML = " ";
+    }else{
+        document.getElementById('usererror').innerHTML = " **Username must only contain . _ character and digit's";
+        return false;
+    }
+
+
+}
+function emailFunc(){
+    var email = document.getElementById('email').value;
+    var emailcheck = /^[A-Za-z0-9]{1,}@[A-Za-z]{2,}[.]{1}[A-Za-z.]{2,8}$/
+    if(emailcheck.test(email)){
+        document.getElementById('emailerror').innerHTML = " ";
+    }else{
+        document.getElementById('emailerror').innerHTML = " ** Email like this abc12@abc.com right format";
+        return false;
+    }
+}
+
+function passFunc(){
+    var password = document.getElementById('password').value;
+    var passcheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{8,16}$/;
+    if(passcheck.test(password)){
+        document.getElementById('passerror').innerHTML = " ";
+    }else{
+        document.getElementById('passerror').innerHTML = " ** password must contain one uppercase,one lowercase, one digit,one specialcharcter and 8 character's long";
+        return false;
+    }
+
+}
+
+function cpassFunc(){
+    var p= document.getElementById('password').value;
+    var conpassword = document.getElementById('conpassword').value;
+
+    if( conpassword.match(p)){
+        document.getElementById('cpasserror').innerHTML = " ";
+    }else{
+        document.getElementById('cpasserror').innerHTML = " **confirm password doesn't match password";
+    }
+}
+
+function numFunc(){
+    var number = document.getElementById('number').value;
+    var numcheck = /^[0-9]{10}$/;
+    if(numcheck.test(number)){
+        document.getElementById('numerror').innerHTML = " ";
+    }else{
+        document.getElementById('numerror').innerHTML = " ** number must contain 10 digits";
+        return false;
+    }
+}
+
+function countryFunc(){
+    var country = document.getElementById('country').value;
+    if(country != "select country"){
+        document.getElementById('conerror').innerHTML = " ";
+    }else{
+        document.getElementById('conerror').innerHTML = " ** Please select country";
+        return false;
+
+    }
+}
+
+
+
+
+
+    </script>
+
+</html>
